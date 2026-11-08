@@ -1,75 +1,100 @@
 # 🚀 Smart Recruitment System
 
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white" />
+  <img src="https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
+  <img src="https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
+  <img src="https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white" />
+  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
+</p>
+
 A Django-based web application designed to simplify the recruitment process by connecting candidates and recruiters.
 
-## 📌 Project Overview
+---
+
+## 🟦 📌 Project Overview
 
 The Smart Recruitment System provides a platform where candidates can register, recruiters can create job postings, and candidates can apply for available jobs.
 
-## ✨ Features
+---
 
-- Candidate Registration and Login
-- Recruiter Registration and Login
-- User Authentication
-- Job Posting
-- Job Application
-- Candidate Dashboard
-- Recruiter Dashboard
-- Django Admin Panel
+## 🟣 ✨ Features
 
-## 🛠️ Technologies Used
+- 🟢 Candidate Registration and Login
+- 🔵 Recruiter Registration and Login
+- 🟠 User Authentication
+- 🟣 Job Posting
+- 🔴 Job Application
+- 🟡 Candidate Dashboard
+- 🟢 Recruiter Dashboard
+- 🔵 Django Admin Panel
 
-- Python
-- Django
-- HTML
-- CSS
-- SQLite
-- Git & GitHub
+---
 
-## ⚙️ Installation and Setup
+## 🟠 🛠️ Technologies Used
 
-1. Clone the repository:
+| Technology | Purpose |
+|---|---|
+| 🐍 Python | Programming Language |
+| 🌐 Django | Web Framework |
+| 🟠 HTML | Web Page Structure |
+| 🔵 CSS | Web Page Styling |
+| 🗄️ SQLite | Database |
+| 🐙 Git & GitHub | Version Control |
 
-   `git clone https://github.com/Seenu-vasanR/SmartRecruitmentSystem.git`
+---
 
-2. Open the project folder:
+## 🟢 ⚙️ Installation and Setup
 
-   `cd SmartRecruitmentSystem`
+**1. Clone the repository:**
 
-3. Create a virtual environment:
+`git clone https://github.com/Seenu-vasanR/SmartRecruitmentSystem.git`
 
-   `python -m venv venv`
+**2. Open the project folder:**
 
-4. Activate the virtual environment:
+`cd SmartRecruitmentSystem`
 
-   `venv\Scripts\activate`
+**3. Create a virtual environment:**
 
-5. Install Django:
+`python -m venv venv`
 
-   `pip install Django==5.2.19`
+**4. Activate the virtual environment:**
 
-6. Apply migrations:
+`venv\Scripts\activate`
 
-   `python manage.py migrate`
+**5. Install Django:**
 
-7. Start the development server:
+`pip install Django==5.2.19`
 
-   `python manage.py runserver`
+**6. Apply migrations:**
 
-8. Open in your browser:
+`python manage.py migrate`
 
-   `http://127.0.0.1:8000/`
+**7. Start the development server:**
 
-## 👨‍💻 Developer
+`python manage.py runserver`
+
+**8. Open in your browser:**
+
+`http://127.0.0.1:8000/`
+
+---
+
+## 🔵 👨‍💻 Developer
 
 **Seenuvasan R**
 
 B.Sc. Computer Science Graduate | Aspiring Python Developer
 
-- GitHub: https://github.com/Seenu-vasanR
-- LinkedIn: https://www.linkedin.com/in/seenuvasanr
-- Email: seenuvasan.720049@gmail.com
+- 🐙 GitHub: https://github.com/Seenu-vasanR
+- 💼 LinkedIn: https://www.linkedin.com/in/seenuvasanr
+- 📧 Email: seenuvasan.720049@gmail.com
 
 ---
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Thank%20You-For%20Visiting-blueviolet?style=for-the-badge" />
+</p>
 
 ⭐ Thank you for visiting my project!
