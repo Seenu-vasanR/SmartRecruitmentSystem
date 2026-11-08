@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Apply for Job</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f7f6; margin: 50px; }
+        .form-container { background: white; padding: 30px; border-radius: 8px; max-width: 500px; margin: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        h2 { color: #333; margin-bottom: 5px; }
+        h4 { color: #666; margin-top: 0; }
+        .job-details { background: #fafafa; padding: 15px; border-radius: 6px; border: 1px solid #eee; margin-bottom: 20px; }
+        input[type="file"] { width: 100%; padding: 10px; margin: 15px 0; border: 1px dashed #ccc; border-radius: 4px; box-sizing: border-box; background: #fff; cursor: pointer; }
+        button { width: 100%; background-color: #2b7a78; color: white; padding: 12px; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; font-weight: bold; }
+        button:hover { background-color: #17252a; }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Apply for Position</h2>
+    <h4>{{ job.title }} - {{ job.company_name }}</h4>
+    
+    <div class="job-details">
+        <p><strong>Location:</strong> {{ job.location }}</p>
+        <p><strong>Expectations Keywords:</strong> {{ job.requirements }}</p>
+    </div>
+
+    <!-- ⚠️ enctype="multipart/form-data" romba mukkiyam resume file upload aaga -->
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <label>Upload Your Resume (PDF only):</label>
+
+    <input
+        type="file"
+        name="resume"
+        accept=".pdf"
+        required
+    >
+
+    <button type="submit">Submit Smart Application</button>
+</form>
+</div>
+
+</body>
+</html>

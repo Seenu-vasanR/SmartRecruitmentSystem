@@ -1,0 +1,196 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recruiter Dashboard & Smart ATS Rankings</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            margin: 30px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            background-color: #3a6073;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #16222a;
+        }
+
+        .logout-btn {
+            background-color: #dc3545;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .logout-btn:hover {
+            background-color: #a71d2a;
+        }
+
+        .job-section {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 6px;
+            background-color: #fafafa;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background: white;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #3a6073;
+            color: white;
+        }
+
+        .badge {
+            background-color: #2b7a78;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .msg {
+            color: green;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+
+        <h2>Smart Recruitment Dashboard - HR Portal</h2>
+
+        <div style="display: flex; gap: 10px; align-items: center;">
+
+            <a href="/jobs/post-job/" class="btn">
+                + Post a New Job
+            </a>
+
+            <form method="POST" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button type="submit" class="logout-btn">
+                    Logout
+                </button>
+            </form>
+
+        </div>
+
+    </div>
+
+    {% if messages %}
+        {% for message in messages %}
+            <p class="msg">{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+
+    <h3>Your Job Openings & Smart Applicant Rankings:</h3>
+
+    {% if jobs %}
+        {% for job in jobs %}
+
+            <div class="job-section">
+
+                <h3 style="color: #2b7a78; margin-top: 0;">
+                    🎯 {{ job.title }}
+                </h3>
+
+                <p>
+                    <strong>Required Keywords:</strong>
+                    <code>{{ job.requirements }}</code>
+                </p>
+
+                <h4>Applicants Ranked by AI Match Score:</h4>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Candidate Username</th>
+                            <th>Email</th>
+                            <th>AI Match Score</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {% for app in job.application_set.all %}
+                            <tr>
+                                <td><strong>{{ app.candidate.username }}</strong></td>
+                                <td>{{ app.candidate.email }}</td>
+                                <td>
+                                    <span class="badge">
+                                        {{ app.match_score }}%
+                                    </span>
+                                </td>
+                                <td>
+                                    {{ app.status }}
+                                </td>
+                            </tr>
+                        {% empty %}
+                            <tr>
+                                <td colspan="4" style="text-align: center; color: #888;">
+                                    Innum yarum indha job-ku apply pannala.
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+            </div>
+
+        {% endfor %}
+
+    {% else %}
+        <p>No jobs posted yet. Click the button mela to post your first vacancy!</p>
+    {% endif %}
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recruiter Sign-Up</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            margin: 50px;
+        }
+
+        /* Home Icon */
+        .home-icon {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: #1e40af;
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .home-icon:hover {
+            background: #1e3a8a;
+        }
+
+        .form-container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            max-width: 400px;
+            margin: auto;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #333;
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            background-color: #3a6073;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #16222a;
+        }
+
+        .msg {
+            color: red;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<a href="{% url 'home' %}" class="home-icon">
+    🏠 Home
+</a>
+
+<div class="form-container">
+
+    <h2>Recruiter Registration</h2>
+
+    {% if messages %}
+        {% for message in messages %}
+            <p class="msg">{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <input type="text" name="username" placeholder="HR Username" required>
+
+        <input type="email" name="email" placeholder="Official Email" required>
+
+        <input type="password" name="password" placeholder="Password" required>
+
+        <input type="text" name="company_name" placeholder="Company Name" required>
+
+        <input type="url" name="website" placeholder="Company Website URL (Optional)">
+
+        <button type="submit">Register as Recruiter</button>
+    </form>
+
+</div>
+
+</body>
+</html>

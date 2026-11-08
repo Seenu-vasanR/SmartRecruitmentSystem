@@ -1,0 +1,51 @@
+
+{% extends "admin/base.html" %}
+
+{% block branding %}
+<div style="display: flex; align-items: center; gap: 25px;">
+
+    <a id="admin-home-link" href="{% url 'home' %}">
+        🏠 Home
+    </a>
+
+    <h1 id="site-name">
+        <a href="{% url 'admin:index' %}">
+            Smart Recruitment System Administration
+        </a>
+    </h1>
+
+</div>
+{% endblock %}
+
+{% block extrastyle %}
+{{ block.super }}
+
+<style>
+    #branding {
+        display: flex;
+        align-items: center;
+    }
+
+    #admin-home-link {
+        display: inline-block;
+        background-color: #1e40af;
+        color: white !important;
+        padding: 12px 20px;
+        border-radius: 8px;
+        text-decoration: none !important;
+        font-size: 16px;
+        font-weight: bold;
+        white-space: nowrap;
+    }
+
+    #admin-home-link:hover {
+        background-color: #1e3a8a;
+    }
+
+    #site-name {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+</style>
+
+{% endblock %}

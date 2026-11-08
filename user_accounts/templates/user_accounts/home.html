@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Recruitment System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        h1 {
+            color: #1e3a8a;
+        }
+
+        .btn {
+            display: block;
+            padding: 15px;
+            margin: 15px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+
+        .btn:hover {
+            background: #1e40af;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Smart Recruitment System</h1>
+
+    <p>Welcome to Smart Recruitment System</p>
+
+    <a href="/admin/" class="btn">Admin Login</a>
+
+    <a href="{% url 'candidate_signup' %}" class="btn">
+        Candidate Registration
+    </a>
+
+    <a href="{% url 'recruiter_signup' %}" class="btn">
+        Recruiter Registration
+    </a>
+
+    <a href="{% url 'user_login' %}" class="btn">
+        User Login
+    </a>
+
+</div>
+
+</body>
+</html>
